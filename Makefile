@@ -6,42 +6,44 @@
 #    By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 22:08:43 by mamaquig          #+#    #+#              #
-#    Updated: 2021/05/13 20:5933 by mamaquig         ###   ########.fr        #
+#    Updated: 2021/08/19 18:10:24 by mamaquig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
-SRC			=	$(addprefix src/,			\
-					main.c					\
-				)\
+SRC			=	$(addprefix src/,				\
+					main.c						\
+					utils.c						\
+					check_parsing.c				\
+				)								\
+				$(addprefix src/operations/,	\
+					push.c						\
+					reverse.c					\
+					rotate.c					\
+					swap.c						\
+				)
 OBJ			=	$(SRC:.c=.o)
 CC			=	gcc
-HEADER		=	-Iheader -Ilibft/header
-LIB			=	-Llibft
-CFLAGS		=	-Wall -Wextra -Werror
+HEADER		=	-Iheader
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address -g3
 
 all: $(NAME)
 
-$(NAME): libft $(OBJ)
-	$(CC) $(CFLAGS) $(HEADER) $(LIB) -o $@ $(OBJ) -lft -ltermcap
+$(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) $(HEADER) $(LIB) -o $@ $(OBJ)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
-
-libft:
-	make -C libft
+	@$(CC) $(CFLAGS) $(HEADER) -c $< -o $@
 
 norme:
 	norminette
 
 clean:
-	make clean -C libft
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	make fclean -C libft
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY:	all libft norme clean fclean re
+.PHONY:	all norme clean fclean re
