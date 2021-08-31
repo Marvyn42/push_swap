@@ -1,7 +1,23 @@
 #include "push_swap.h"
 
-// malloc le maillon de la chaine
-// stacks->a
+char	check_multiple(t_list *list)
+{
+	t_list *next;
+
+	next = list->next;
+	while (list)
+	{
+		next = list->next;
+		while (next)
+		{
+			if (list->data == next->data)
+				return (0);
+			next = next->next;
+		}
+		list = list->next;
+	}
+	return (1);
+}
 
 char	check_parse(char **args, t_list **list)
 {
@@ -25,6 +41,8 @@ char	check_parse(char **args, t_list **list)
 		ft_lstadd_back(list, tmp);
 		i++;
 	}
+	if (!check_multiple(*list))
+		return (0);
 	return (1);
 }
 
