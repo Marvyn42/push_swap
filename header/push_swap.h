@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/08/31 14:53:29 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/01 19:02:34 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,50 +44,50 @@ unsigned int	check_args(const char *str);
 /*
 ** small_size.c
 */
-void			small_size(t_stacks *stacks, int size, t_list *out);
-void			size_two(t_stacks *stacks, t_list *out);
-void			size_three(t_stacks *stacks, t_list *out);
-void			size_four(t_stacks *stacks, t_list *out);
-void			size_five(t_stacks *stacks, t_list *out);
-
-
+void			small_size(t_stacks *stacks, int size, t_output **out);
+void			size_two(t_list **list, t_output **out);
+void			size_three(t_list **list, t_output **out);
+void			size_ff(t_stacks *stacks, t_output **out, int size);
 
 /*
 ** swap.c
 */
-void			swap_a(t_list **list);
-void			swap_b(t_list **list);
-void			swap_swap(t_list **list_a, t_list **list_b);
+char			*swap_a(t_list **list);
+char			*swap_b(t_list **list);
+char			*swap_swap(t_list **list_a, t_list **list_b);
 
 /*
 ** push.c
 */
-void			push_a(t_stacks *stacks);
-void			push_b(t_stacks *stacks);
+char			*push_a(t_stacks *stacks);
+char			*push_b(t_stacks *stacks);
 
 /*
 ** rotate.c
 */
-void			rotate_a(t_list **list);
-void			rotate_b(t_list **list);
-void			rotate_rotate(t_stacks *stacks);
+char			*rotate_a(t_list **list);
+char			*rotate_b(t_list **list);
+char			*rotate_rotate(t_stacks *stacks);
 
 /*
 ** reverse.c
 */
-void			reverse_rotate_a(t_list **list);
-void			reverse_rotate_b(t_list **list);
-void			reverse_rotate_reverse(t_stacks *stacks);
+char			*reverse_rotate_a(t_list **list);
+char			*reverse_rotate_b(t_list **list);
+char			*reverse_rotate_reverse(t_stacks *stacks);
 
 /*
-**	Utils.c
+**	Utils
 */
+void			fill_out(char *arg, t_output **out);
+void			free_list(t_stacks *stacks, t_output **out);
 int				ft_isdigit(int c);
-void			*ft_calloc(size_t count, size_t size);
-void			print_list(t_stacks stacks);
-t_list			*ft_lstnew(int content);
 void			ft_lstadd_back(t_list **alst, t_list *new);
-void			free_list(t_stacks *stacks, t_list *out);
 void			ft_lstadd_front(t_list **alst, t_list *new);
+t_list			*ft_lstnew(int content);
+void			ft_outadd_back(t_output **alst, t_output *new);
+t_output		*ft_outnew(void *content);
+void			print_list(t_stacks stacks);
+void			print_out(t_output *list);
 
 #endif

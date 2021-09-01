@@ -40,6 +40,7 @@ char	check_parse(char **args, t_list **list)
 			return (0);
 		ft_lstadd_back(list, tmp);
 		i++;
+		neg = 1;
 	}
 	if (!check_multiple(*list))
 		return (0);
