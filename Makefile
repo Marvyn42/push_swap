@@ -6,7 +6,7 @@
 #    By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 22:08:43 by mamaquig          #+#    #+#              #
-#    Updated: 2021/09/01 19:02:44 by mamaquig         ###   ########.fr        #
+#    Updated: 2021/09/03 17:19:18 by mamaquig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRC			=	$(addprefix src/,				\
 					check_parsing.c				\
 					main.c						\
 					small_size.c				\
+					radix_sort.c				\
 				)								\
 				$(addprefix src/operations/,	\
 					push.c						\
@@ -33,6 +34,7 @@ SRC			=	$(addprefix src/,				\
 					ft_outnew.c					\
 					print_list.c				\
 					print_out.c					\
+					ft_strlen.c					\
 				)
 OBJ			=	$(SRC:.c=.o)
 CC			=	gcc

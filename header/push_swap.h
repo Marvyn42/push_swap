@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/01 19:02:34 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/06 14:42:52 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ typedef struct s_stacks
 }				t_stacks;
 
 /*
+** radix_sort.c
+*/
+void			radix_sort(t_stacks *stacks, t_output **out);
+
+/*
 **	check_parsing.c
 */
 char			check_parse(char **args, t_list **list);
@@ -45,8 +50,8 @@ unsigned int	check_args(const char *str);
 ** small_size.c
 */
 void			small_size(t_stacks *stacks, int size, t_output **out);
-void			size_two(t_list **list, t_output **out);
 void			size_three(t_list **list, t_output **out);
+void			three_reverse(t_stacks *stacks, t_output **out);
 void			size_ff(t_stacks *stacks, t_output **out, int size);
 
 /*
@@ -89,5 +94,6 @@ void			ft_outadd_back(t_output **alst, t_output *new);
 t_output		*ft_outnew(void *content);
 void			print_list(t_stacks stacks);
 void			print_out(t_output *list);
+int				ft_strlen(char *str);
 
 #endif
