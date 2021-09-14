@@ -1,16 +1,5 @@
 #include "push_swap.h"
 
-char	is_sorted(t_list *list)
-{
-	while (list->next)
-	{
-		if (list->data > list->next->data)
-			return (0);
-		list = list->next;
-	}
-	return (1);
-}
-
 int	main(int ac, char **av)
 {
 	t_stacks	stacks;
@@ -28,8 +17,8 @@ int	main(int ac, char **av)
 			if (!is_sorted(stacks.a) && ac <= 6)
 				small_size(&stacks, (ac - 1), &out);
 			else if (!is_sorted(stacks.a) && ac > 6)
-				radix_sort(&stacks, &out);
-			print_list(stacks);
+				quick_sort(&stacks, &out);
+			// print_list(stacks);
 			print_out(out);
 		}
 		free_list(&stacks, &out);
@@ -37,9 +26,12 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-// TODO: Revoir le tri de 5 = condition pour ne pas faire d'étape pour rien ?
-// TODO: Faire un tri pour une liste de 4 ?
-// TODO: Opti la sortie OUTPUT (RA suivi de RB = RR)
+// TODO: Revoir le tri de 5 et 4 (fonction RA)
 
-// TODO: Faire un GC pour tout free par la suite ??? Nécessaire ?
+// integrer un tri dinsersion pour les petites portions
+// push direct les portion ascendantes ou descendante
+// Faire la technique d'antoine ou tu met ta liste triee a la fin de A au lieu de sur B
+// Pivot médiane
+
+// TODO: Opti la sortie OUTPUT ? (RA suivi de RB = RR)
 // TODO: retirer fonction inutile

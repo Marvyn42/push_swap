@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/06 14:42:52 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/14 20:27:39 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_output
 typedef struct s_list
 {
 	int				data;
+	char			flag;
 	struct s_list	*next;
 }				t_list;
 
@@ -36,15 +37,35 @@ typedef struct s_stacks
 }				t_stacks;
 
 /*
-** radix_sort.c
+** quick_sort.c
 */
-void			radix_sort(t_stacks *stacks, t_output **out);
+void			quick_sort(t_stacks *stacks, t_output **out);
+char			is_descendant(t_list *list);
+char			is_ascendant(t_list *list);
+int				set_pivot(t_list **list);
+char			is_alone(t_list *list);
+
+/*
+** stack_a.c
+*/
+void			sort_a(t_stacks *stacks, t_output **out);
+char			a_is_sorted(t_stacks *stacks, t_output **out);
+void			remettre_en_etat_A(t_stacks *stacks, t_output **out, int count);
+
+/*
+** stack_b.c
+*/
+void			sort_b(t_stacks *stacks, t_output **out);
+char			b_is_sorted(t_list **list);
+void			remettre_en_etat_B(t_stacks *stacks, t_output **out, int count);
 
 /*
 **	check_parsing.c
 */
 char			check_parse(char **args, t_list **list);
 unsigned int	check_args(const char *str);
+void			init_flags(t_list **list);
+char			check_multiple(t_list *list);
 
 /*
 ** small_size.c
@@ -95,5 +116,6 @@ t_output		*ft_outnew(void *content);
 void			print_list(t_stacks stacks);
 void			print_out(t_output *list);
 int				ft_strlen(char *str);
+char			is_sorted(t_list *list);
 
 #endif

@@ -5,18 +5,20 @@
 char	*reverse_rotate_a(t_list **list)
 {
 	t_list *tmp;
-	t_list *first_elem;
+	t_list *tmp2;
 
-	// if ((*list) && (*list)->next)
-	// {
-		first_elem = (*list);
-		(*list) = (*list)->next;
-		tmp = (*list);
-		while (tmp->next)
-			tmp = tmp->next;
-		tmp->next = first_elem;
-		first_elem->next = NULL;
-	// }
+	if ((*list) && (*list)->next)
+	{
+		tmp2 = (*list);
+		while (tmp2->next)
+		{
+			tmp = tmp2;
+			tmp2 = tmp2->next;
+		}
+		tmp->next = NULL;
+		tmp2->next = *list;
+		*list = tmp2;
+	}
 	return ("rra");
 }
 

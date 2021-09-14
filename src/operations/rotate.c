@@ -7,16 +7,16 @@ char	*rotate_a(t_list **list)
 	t_list *tmp;
 	t_list *tmp2;
 	
-	// if ((*list) && (*list)->next)
-	// {
+	if ((*list) && (*list)->next)
+	{
 		tmp = (*list);
-		while (tmp->next->next)
-			tmp = tmp->next;
-		tmp2 = tmp->next;
-		tmp2->next = (*list);
+		*list = (*list)->next;
+		tmp2 = (*list);
+		while (tmp2->next)
+			tmp2 = tmp2->next;
+		tmp2->next = tmp;
 		tmp->next = NULL;
-		(*list) = tmp2;
-	// }
+	}
 	return ("ra");
 }
 

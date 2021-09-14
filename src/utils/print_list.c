@@ -29,11 +29,11 @@ void	print_list(t_stacks stacks)
 		if (!stacks.a)
 			printf("\t");
 		else
-			printf("%d\t", stacks.a->data);
+			printf("%d %c\t", stacks.a->data, stacks.a->flag);
 		if (!stacks.b)
 			printf("\n");
 		else
-			printf("%d\n", stacks.b->data);
+			printf("%d %c\n", stacks.b->data, stacks.b->flag);
 		if (stacks.a)
 			stacks.a = stacks.a->next;
 		if (stacks.b)

@@ -1,5 +1,17 @@
 #include "push_swap.h"
 
+void	init_flags(t_list **list)
+{
+	t_list *tmp;
+
+	tmp = (*list);
+	while (tmp)
+	{
+		tmp->flag = 'R';
+		tmp = tmp->next;
+	}
+}
+
 char	check_multiple(t_list *list)
 {
 	t_list *next;
@@ -44,6 +56,7 @@ char	check_parse(char **args, t_list **list)
 	}
 	if (!check_multiple(*list))
 		return (0);
+	init_flags(list);
 	return (1);
 }
 
