@@ -12,49 +12,65 @@ void	small_size(t_stacks *stacks, int size, t_output **out)
 
 void	size_three(t_list **list, t_output **out)
 {
-	if ((*list)->next->data < (*list)->data && (*list)->data >
-		(*list)->next->next->data)
-		fill_out(reverse_rotate_a(list), out);
-	if ((*list)->data > (*list)->next->data)
-		fill_out(swap_a(list), out);
-	if ((*list)->next->data > (*list)->next->next->data)
+	while (!is_ascendant((*list)))
 	{
-		fill_out(rotate_a(list), out);
-		if ((*list)->data > (*list)->next->data)
+		if ((*list)->data > (*list)->next->data && ((*list)->next->next->data >
+			(*list)->data && (*list)->next->next->data > (*list)->data))
+			fill_out(swap_a(list), out);
+		else if ((*list)->next->next->data > (*list)->next->data && ((*list)->data >
+			(*list)->next->data && (*list)->data > (*list)->next->next->data))
+			fill_out(rotate_a(list), out);
+		else if ((*list)->data > (*list)->next->next->data && ((*list)->next->data >
+			(*list)->data && (*list)->next->data > (*list)->next->next->data))
+			fill_out(reverse_rotate_a(list), out);
+		else if ((*list)->next->data > (*list)->next->next->data && ((*list)->data >
+			(*list)->next->data && (*list)->data > (*list)->next->next->data))
+			fill_out(swap_a(list), out);
+		else if ((*list)->next->next->data > (*list)->data && ((*list)->next->data >
+			(*list)->data && (*list)->next->data > (*list)->next->next->data))
 			fill_out(swap_a(list), out);
 	}
 }
 
-void	three_reverse(t_stacks *stacks, t_output **out)
+void	sort_stack(t_stacks *stacks, t_output **out)
 {
-	if (stacks->b->next->data > stacks->b->data && stacks->b->data <
-		stacks->b->next->next->data)
-		fill_out(reverse_rotate_a(&(stacks->b)), out);
-	if (stacks->b->data < stacks->b->next->data)
-		fill_out(swap_a(&(stacks->b)), out);
-	if (stacks->b->next->data < stacks->b->next->next->data)
+	if (stacks->b->data > stacks->a->data &&
+		stacks->b->data < stacks->a->next->data)
+		{
+		fill_out(push_a(stacks), out);
+		fill_out(swap_a(&(stacks->a)), out);
+		}
+	else if (stacks->b->data > stacks->a->next->data &&
+		stacks->b->data < stacks->a->next->next->data)
 	{
-		fill_out(rotate_a(&(stacks->b)), out);
-		if (stacks->b->data < stacks->b->next->data)
-			fill_out(swap_a(&(stacks->b)), out);
+		fill_out(swap_a(&(stacks->a)), out);
+		fill_out(push_a(stacks), out);
+		fill_out(swap_a(&(stacks->a)), out);
+		fill_out(reverse_rotate_a(&(stacks->a)), out);
 	}
+	else if (stacks->b->data > stacks->a->next->next->data)
+	{
+		fill_out(push_a(stacks), out);
+		fill_out(rotate_a(&(stacks->a)), out);
+	}
+	else
+		fill_out(push_a(stacks), out);
 }
 
 void	size_ff(t_stacks *stacks, t_output **out, int size)
 {
 	fill_out(push_b(stacks), out);
-	fill_out(push_b(stacks), out);
 	if (size == 5)
-		size_three(&(stacks->a), out);
-	else if (stacks->a->data > stacks->a->next->data)
-		fill_out(swap_a(&(stacks->a)), out);
-	fill_out(push_b(stacks), out);
-	three_reverse(stacks, out);
-	fill_out(push_a(stacks), out);
-	if (size == 5)
-		size_three(&(stacks->a), out);
-	fill_out(push_a(stacks), out);
+		fill_out(push_b(stacks), out);
+	size_three(&(stacks->a), out);
+	sort_stack(stacks, out);
 	if (size == 4)
-		size_three(&(stacks->a), out);
-	fill_out(push_a(stacks), out);
+		return ;
+	if (stacks->b->data > stacks->a->next->next->next->data)
+	{
+		fill_out(push_a(stacks), out);
+		fill_out(rotate_a(&(stacks->a)), out);
+	}
+	else
+		sort_stack(stacks, out);
 }

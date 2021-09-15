@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/14 20:27:39 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/16 01:15:38 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,14 @@ char			is_alone(t_list *list);
 */
 void			sort_a(t_stacks *stacks, t_output **out);
 char			a_is_sorted(t_stacks *stacks, t_output **out);
-void			remettre_en_etat_A(t_stacks *stacks, t_output **out, int count);
+void			reset_a(t_stacks *stacks, t_output **out, int count);
 
 /*
 ** stack_b.c
 */
 void			sort_b(t_stacks *stacks, t_output **out);
 char			b_is_sorted(t_list **list);
-void			remettre_en_etat_B(t_stacks *stacks, t_output **out, int count);
+void			reset_b(t_stacks *stacks, t_output **out, int count);
 
 /*
 **	check_parsing.c
@@ -72,7 +72,7 @@ char			check_multiple(t_list *list);
 */
 void			small_size(t_stacks *stacks, int size, t_output **out);
 void			size_three(t_list **list, t_output **out);
-void			three_reverse(t_stacks *stacks, t_output **out);
+void			sort_stack(t_stacks *stacks, t_output **out);
 void			size_ff(t_stacks *stacks, t_output **out, int size);
 
 /*

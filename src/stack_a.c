@@ -1,5 +1,12 @@
 #include "push_swap.h"
 
+void	skip_step(t_stacks *stacks, t_output **out)
+{
+	while (stacks->a && stacks->a->flag == 'P')
+		fill_out(push_b(stacks), out);
+	stacks->b->flag = 'S';
+}
+
 void	sort_a(t_stacks *stacks, t_output **out)
 {
 	int pivot;
@@ -12,12 +19,7 @@ void	sort_a(t_stacks *stacks, t_output **out)
 	if (!is_alone(stacks->a))
 		alone = 0;
 	if (stacks->a->flag == 'P')
-	{
-		while (stacks->a && stacks->a->flag == 'P')
-			fill_out(push_b(stacks), out);
-		stacks->b->flag = 'S';
-		return ;
-	}
+		return (skip_step(stacks, out));
 	while (stacks->a->flag != 'P')
 	{
 		if (stacks->a->data > pivot)
@@ -30,7 +32,7 @@ void	sort_a(t_stacks *stacks, t_output **out)
 		// print_list(*stacks);
 	}
 	if (!alone)
-		remettre_en_etat_A(stacks, out, count);
+		reset_a(stacks, out, count);
 }
 
 char	a_is_sorted(t_stacks *stacks, t_output **out)
@@ -48,7 +50,7 @@ char	a_is_sorted(t_stacks *stacks, t_output **out)
 	return (0);
 }
 
-void	remettre_en_etat_A(t_stacks *stacks, t_output **out, int count)
+void	reset_a(t_stacks *stacks, t_output **out, int count)
 {
 	if(count)
 	{

@@ -23,7 +23,7 @@ void	sort_b(t_stacks *stacks, t_output **out)
 		return ;
 	}
 	else
-		remettre_en_etat_B(stacks, out, count);
+		reset_b(stacks, out, count);
 	// fill_out(push_a(stacks), out);
 	//remettre en état B aussi, mais quand ???
 }
@@ -42,7 +42,7 @@ char	b_is_sorted(t_list **list)
 	return (0);
 }
 
-void	remettre_en_etat_B(t_stacks *stacks, t_output **out, int count)
+void	reset_b(t_stacks *stacks, t_output **out, int count)
 {
 	if(count)
 	{

@@ -26,8 +26,6 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-// TODO: Revoir le tri de 5 et 4 (fonction RA)
-
 // integrer un tri dinsersion pour les petites portions
 // push direct les portion ascendantes ou descendante
 // Faire la technique d'antoine ou tu met ta liste triee a la fin de A au lieu de sur B
