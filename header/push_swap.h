@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/16 01:15:38 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/16 18:35:22 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_stacks
 	t_list	*a;
 	t_list	*b;
 }				t_stacks;
+
+/*
+** optimization.c
+*/
+void			sorted_part(t_stacks *stacks, t_output **out);
 
 /*
 ** quick_sort.c

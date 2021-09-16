@@ -29,7 +29,6 @@ void	sort_a(t_stacks *stacks, t_output **out)
 		}
 		else
 			fill_out(push_b(stacks), out);
-		// print_list(*stacks);
 	}
 	if (!alone)
 		reset_a(stacks, out, count);
@@ -37,10 +36,8 @@ void	sort_a(t_stacks *stacks, t_output **out)
 
 char	a_is_sorted(t_stacks *stacks, t_output **out)
 {
-	//a est triée (ascendant) et b est vide
 	if (is_ascendant(stacks->a) && !stacks->b)
 		return (1);
-	//a est triée (ascendant) et b triée (descendant)
 	if (is_ascendant(stacks->a) && is_descendant(stacks->b))
 	{
 		while (stacks->b)
@@ -54,19 +51,12 @@ void	reset_a(t_stacks *stacks, t_output **out, int count)
 {
 	if(count)
 	{
-		printf("count = %d\n", count);
-		//push le pivot (dans B)
 		fill_out(push_b(stacks), out);
-		//rra autant de fois que ra
 		while (count)
 		{
 			fill_out(reverse_rotate_a(&(stacks->a)), out);
 			count--;
 		}
-		// remettre le pivot dans sa liste
 		fill_out(push_a(stacks), out);
-		// printf("nouvelle liste après la remise en état:\n");
-		// print_list(*stacks);
-		// printf("---------------------------------------\n");
 	}
 }

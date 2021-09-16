@@ -20,16 +20,17 @@ int	main(int ac, char **av)
 				quick_sort(&stacks, &out);
 			// print_list(stacks);
 			print_out(out);
+			// output_cleaning(&out);
 		}
 		free_list(&stacks, &out);
 	}
 	return (0);
 }
 
+// TODO: Opti la sortie OUTPUT ? (RA suivi de RB = RR)
 // integrer un tri dinsersion pour les petites portions
-// push direct les portion ascendantes ou descendante
+
 // Faire la technique d'antoine ou tu met ta liste triee a la fin de A au lieu de sur B
 // Pivot médiane
 
-// TODO: Opti la sortie OUTPUT ? (RA suivi de RB = RR)
-// TODO: retirer fonction inutile
+//TODO: ranger proprement dans utils

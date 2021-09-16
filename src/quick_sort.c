@@ -76,17 +76,14 @@ char	is_alone(t_list *list)
 	return (1);
 }
 
-
-
 void	quick_sort(t_stacks *stacks, t_output **out)
 {
-	// print_list(*stacks);
 	while (!a_is_sorted(stacks, out))
 	{
+		if (stacks->a->flag == 'P' && !is_alone(stacks->a))
+			sorted_part(stacks, out);
 		sort_a(stacks, out);
-		// print_list(*stacks);
 		while (!b_is_sorted(&(stacks->b)))
 			sort_b(stacks, out);
-		// print_list(*stacks);
 	}
 }
