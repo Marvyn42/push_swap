@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_size.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 00:32:40 by mamaquig          #+#    #+#             */
+/*   Updated: 2021/09/21 00:32:41 by mamaquig         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	small_size(t_stacks *stacks, int size, t_output **out)
@@ -14,34 +26,38 @@ void	size_three(t_list **list, t_output **out)
 {
 	while (!is_ascendant((*list)))
 	{
-		if ((*list)->data > (*list)->next->data && ((*list)->next->next->data >
-			(*list)->data && (*list)->next->next->data > (*list)->data))
+		if ((*list)->data > (*list)->next->data && ((*list)->next->next->data
+				> (*list)->data && (*list)->next->next->data > (*list)->data))
 			fill_out(swap_a(list), out);
-		else if ((*list)->next->next->data > (*list)->next->data && ((*list)->data >
-			(*list)->next->data && (*list)->data > (*list)->next->next->data))
+		else if ((*list)->next->next->data > (*list)->next->data
+			&& ((*list)->data > (*list)->next->data
+				&& (*list)->data > (*list)->next->next->data))
 			fill_out(rotate_a(list), out);
-		else if ((*list)->data > (*list)->next->next->data && ((*list)->next->data >
-			(*list)->data && (*list)->next->data > (*list)->next->next->data))
+		else if ((*list)->data > (*list)->next->next->data
+			&& ((*list)->next->data > (*list)->data
+				&& (*list)->next->data > (*list)->next->next->data))
 			fill_out(reverse_rotate_a(list), out);
-		else if ((*list)->next->data > (*list)->next->next->data && ((*list)->data >
-			(*list)->next->data && (*list)->data > (*list)->next->next->data))
+		else if ((*list)->next->data > (*list)->next->next->data
+			&& ((*list)->data > (*list)->next->data
+				&& (*list)->data > (*list)->next->next->data))
 			fill_out(swap_a(list), out);
-		else if ((*list)->next->next->data > (*list)->data && ((*list)->next->data >
-			(*list)->data && (*list)->next->data > (*list)->next->next->data))
+		else if ((*list)->next->next->data > (*list)->data
+			&& ((*list)->next->data > (*list)->data
+				&& (*list)->next->data > (*list)->next->next->data))
 			fill_out(swap_a(list), out);
 	}
 }
 
 void	sort_stack(t_stacks *stacks, t_output **out)
 {
-	if (stacks->b->data > stacks->a->data &&
-		stacks->b->data < stacks->a->next->data)
-		{
+	if (stacks->b->data > stacks->a->data
+		&& stacks->b->data < stacks->a->next->data)
+	{
 		fill_out(push_a(stacks), out);
 		fill_out(swap_a(&(stacks->a)), out);
-		}
-	else if (stacks->b->data > stacks->a->next->data &&
-		stacks->b->data < stacks->a->next->next->data)
+	}
+	else if (stacks->b->data > stacks->a->next->data
+		&& stacks->b->data < stacks->a->next->next->data)
 	{
 		fill_out(swap_a(&(stacks->a)), out);
 		fill_out(push_a(stacks), out);

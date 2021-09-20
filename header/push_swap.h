@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/16 18:35:22 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/20 23:27:04 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,6 @@ typedef struct s_stacks
 	t_list	*a;
 	t_list	*b;
 }				t_stacks;
-
-/*
-** optimization.c
-*/
-void			sorted_part(t_stacks *stacks, t_output **out);
 
 /*
 ** quick_sort.c
@@ -122,5 +117,20 @@ void			print_list(t_stacks stacks);
 void			print_out(t_output *list);
 int				ft_strlen(char *str);
 char			is_sorted(t_list *list);
+
+/*
+**	Optimizations
+*/
+void			opti_rb(t_output **begin);
+void			opti_ra(t_output **begin);
+void			opti_rrb(t_output **begin);
+void			opti_rra(t_output **begin);
+void			opti_pa(t_output **begin);
+void			opti_pb(t_output **begin);
+void			output_cleaning(t_output **out);
+void			sorted_part(t_stacks *stacks, t_output **out);
+void			first_greather(int greather, int smaller, t_output **ptr,
+				t_output **begin);
+void			second_greather(int smaller, int greather, t_output **ptr);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 22:08:43 by mamaquig          #+#    #+#              #
-#    Updated: 2021/09/16 18:35:38 by mamaquig         ###   ########.fr        #
+#    Updated: 2021/09/21 00:25:54 by mamaquig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ SRC			=	$(addprefix src/,				\
 					quick_sort.c				\
 					stack_a.c					\
 					stack_b.c					\
-					optimization.c				\
 				)								\
 				$(addprefix src/operations/,	\
 					push.c						\
@@ -27,18 +26,19 @@ SRC			=	$(addprefix src/,				\
 					swap.c						\
 				)								\
 				$(addprefix src/utils/,			\
-					fill_out.c					\
-					free_list.c					\
-					ft_isdigit.c				\
-					ft_lstadd_back.c			\
-					ft_lstadd_front.c			\
-					ft_lstnew.c					\
-					ft_outadd_back.c			\
-					ft_outnew.c					\
+					list.c						\
+					outlist.c					\
 					print_list.c				\
-					print_out.c					\
-					ft_strlen.c					\
-					is_sorted.c					\
+					utils.c						\
+				)								\
+				$(addprefix src/optimizations/,	\
+					optimization.c				\
+					opti_rb.c					\
+					opti_ra.c					\
+					opti_rrb.c					\
+					opti_rra.c					\
+					opti_pa.c					\
+					opti_pb.c					\
 				)
 OBJ			=	$(SRC:.c=.o)
 CC			=	gcc

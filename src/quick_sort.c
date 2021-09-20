@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 00:27:21 by mamaquig          #+#    #+#             */
+/*   Updated: 2021/09/21 00:27:22 by mamaquig         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	is_descendant(t_list *list)
 {
-	int tmp;
+	int	tmp;
 
 	if (!list->next)
 		return (1);
@@ -20,7 +32,7 @@ char	is_descendant(t_list *list)
 
 char	is_ascendant(t_list *list)
 {
-	int tmp;
+	int	tmp;
 
 	if (!list || !list->next)
 		return (1);
@@ -36,10 +48,10 @@ char	is_ascendant(t_list *list)
 	return (1);
 }
 
-int		set_pivot(t_list **list)
+int	set_pivot(t_list **list)
 {
-	t_list *tmp;
-	t_list *prev;
+	t_list	*tmp;
+	t_list	*prev;
 	int		pivot;
 
 	tmp = (*list);
@@ -60,8 +72,8 @@ int		set_pivot(t_list **list)
 
 char	is_alone(t_list *list)
 {
-	t_list *tmp;
-	int count;
+	t_list	*tmp;
+	int		count;
 
 	tmp = list;
 	count = 0;

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/20 21:35:43 by mamaquig          #+#    #+#             */
+/*   Updated: 2021/09/20 21:35:43 by mamaquig         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	*swap_a(t_list **list)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = (*list)->next->data;
 	(*list)->next->data = (*list)->data;
@@ -12,7 +24,7 @@ char	*swap_a(t_list **list)
 
 char	*swap_b(t_list **list)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = (*list)->next->data;
 	(*list)->next->data = (*list)->data;

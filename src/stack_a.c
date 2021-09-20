@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_a.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 00:32:57 by mamaquig          #+#    #+#             */
+/*   Updated: 2021/09/21 00:33:20 by mamaquig         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	skip_step(t_stacks *stacks, t_output **out)
@@ -9,9 +21,9 @@ void	skip_step(t_stacks *stacks, t_output **out)
 
 void	sort_a(t_stacks *stacks, t_output **out)
 {
-	int pivot;
-	int count;
-	int alone;
+	int	pivot;
+	int	count;
+	int	alone;
 
 	count = 0;
 	alone = 1;
@@ -49,7 +61,7 @@ char	a_is_sorted(t_stacks *stacks, t_output **out)
 
 void	reset_a(t_stacks *stacks, t_output **out, int count)
 {
-	if(count)
+	if (count)
 	{
 		fill_out(push_b(stacks), out);
 		while (count)

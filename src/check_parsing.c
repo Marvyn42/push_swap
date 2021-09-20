@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_parsing.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/21 00:26:19 by mamaquig          #+#    #+#             */
+/*   Updated: 2021/09/21 00:26:29 by mamaquig         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	init_flags(t_list **list)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	tmp = (*list);
 	while (tmp)
@@ -14,7 +26,7 @@ void	init_flags(t_list **list)
 
 char	check_multiple(t_list *list)
 {
-	t_list *next;
+	t_list	*next;
 
 	next = list->next;
 	while (list)
