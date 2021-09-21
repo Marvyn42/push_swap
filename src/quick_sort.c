@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 00:27:21 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/21 00:27:22 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/21 18:55:13 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,11 @@ int	set_pivot(t_list **list)
 		}
 		prev = tmp;
 		tmp = tmp->next;
+	}
+	if (tmp->flag == 'P' || tmp->flag == 'S')
+	{
+		prev->flag = 'P';
+		return (pivot = prev->data);
 	}
 	tmp->flag = 'P';
 	return (pivot = tmp->data);
