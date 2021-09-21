@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 18:14:20 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/20 23:27:04 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/09/21 17:43:09 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ void			ft_lstadd_front(t_list **alst, t_list *new);
 t_list			*ft_lstnew(int content);
 void			ft_outadd_back(t_output **alst, t_output *new);
 t_output		*ft_outnew(void *content);
-void			print_list(t_stacks stacks);
 void			print_out(t_output *list);
 int				ft_strlen(char *str);
 char			is_sorted(t_list *list);
@@ -130,7 +129,7 @@ void			opti_pb(t_output **begin);
 void			output_cleaning(t_output **out);
 void			sorted_part(t_stacks *stacks, t_output **out);
 void			first_greather(int greather, int smaller, t_output **ptr,
-				t_output **begin);
+					t_output **begin);
 void			second_greather(int smaller, int greather, t_output **ptr);
 
 #endif

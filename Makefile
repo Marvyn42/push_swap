@@ -6,7 +6,7 @@
 #    By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 22:08:43 by mamaquig          #+#    #+#              #
-#    Updated: 2021/09/21 00:25:54 by mamaquig         ###   ########.fr        #
+#    Updated: 2021/09/21 17:42:22 by mamaquig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ SRC			=	$(addprefix src/,				\
 				$(addprefix src/utils/,			\
 					list.c						\
 					outlist.c					\
-					print_list.c				\
 					utils.c						\
 				)								\
 				$(addprefix src/optimizations/,	\
@@ -43,7 +42,7 @@ SRC			=	$(addprefix src/,				\
 OBJ			=	$(SRC:.c=.o)
 CC			=	gcc
 HEADER		=	-Iheader
-CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
