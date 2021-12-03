@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 void	print_list(t_stacks stacks)
 {
 	int i;

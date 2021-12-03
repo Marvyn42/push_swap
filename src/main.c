@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 21:34:25 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/21 19:04:14 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/12/03 21:39:55 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int ac, char **av)
 				output_cleaning(&out);
 			}
 			print_out(out);
+			print_list(stacks);
 		}
 		free_list(&stacks, &out);
 	}

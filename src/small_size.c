@@ -6,7 +6,7 @@
 /*   By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 00:32:40 by mamaquig          #+#    #+#             */
-/*   Updated: 2021/09/21 17:33:34 by mamaquig         ###   ########.fr       */
+/*   Updated: 2021/12/03 21:58:17 by mamaquig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	size_three(t_list **list, t_output **out)
 
 void	sort_stack(t_stacks *stacks, t_output **out)
 {
+	print_list(*stacks);
 	if (stacks->b->data > stacks->a->data
 		&& stacks->b->data < stacks->a->next->data)
 	{
@@ -59,15 +60,21 @@ void	sort_stack(t_stacks *stacks, t_output **out)
 	else if (stacks->b->data > stacks->a->next->data
 		&& stacks->b->data < stacks->a->next->next->data)
 	{
-		fill_out(reverse_rotate_a(&(stacks->a)), out);
+		fill_out(rotate_a(&(stacks->a)), out);
+		fill_out(rotate_a(&(stacks->a)), out);
 		fill_out(push_a(stacks), out);
 		fill_out(reverse_rotate_a(&(stacks->a)), out);
 		fill_out(reverse_rotate_a(&(stacks->a)), out);
 	}
 	else if (stacks->b->data > stacks->a->next->next->data)
 	{
-		fill_out(push_a(stacks), out);
 		fill_out(rotate_a(&(stacks->a)), out);
+		fill_out(rotate_a(&(stacks->a)), out);
+		fill_out(rotate_a(&(stacks->a)), out);
+		fill_out(push_a(stacks), out);
+		fill_out(reverse_rotate_a(&(stacks->a)), out);
+		fill_out(reverse_rotate_a(&(stacks->a)), out);
+		fill_out(reverse_rotate_a(&(stacks->a)), out);
 	}
 	else
 		fill_out(push_a(stacks), out);

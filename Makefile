@@ -6,7 +6,7 @@
 #    By: mamaquig <mamaquig@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 22:08:43 by mamaquig          #+#    #+#              #
-#    Updated: 2021/09/21 17:42:22 by mamaquig         ###   ########.fr        #
+#    Updated: 2021/12/03 21:43:01 by mamaquig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC			=	$(addprefix src/,				\
 					quick_sort.c				\
 					stack_a.c					\
 					stack_b.c					\
+					fct_print.c					\
 				)								\
 				$(addprefix src/operations/,	\
 					push.c						\
