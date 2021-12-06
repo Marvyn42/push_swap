@@ -3,12 +3,10 @@
 void	print_list(t_stacks stacks)
 {
 	int i;
-	// int j;
 	int tt;
 	t_list *tmp;
 
 	i = 0;
-	// j = 0;
 	tt = 0;
 	tmp = stacks.a;
 	while (tmp)
@@ -23,6 +21,7 @@ void	print_list(t_stacks stacks)
 		tt++;
 	}
 	tt = (i < tt) ? tt : i;
+	printf("\n\n");
 	printf("List A\tList B\n");
 	while (tt != 0)
 	{
