@@ -18,7 +18,6 @@ SRC			=	$(addprefix src/,				\
 					quick_sort.c				\
 					stack_a.c					\
 					stack_b.c					\
-					printlist.c					\
 				)								\
 				$(addprefix src/operations/,	\
 					push.c						\

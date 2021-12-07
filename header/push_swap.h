@@ -36,8 +36,6 @@ typedef struct s_stacks
 	t_list	*b;
 }				t_stacks;
 
-void	print_list(t_stacks stacks);
-
 /*
 ** quick_sort.c
 */

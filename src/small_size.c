@@ -53,16 +53,12 @@ void	sort_stack_four(t_stacks *stacks, t_output **out)
 	if (stacks->b->data > stacks->a->data
 		&& stacks->b->data < stacks->a->next->data)
 	{
-		// printf("\n\tpart 1 size 4\n");
-		// print_list(*stacks);
 		fill_out(push_a(stacks), out);
 		fill_out(swap_a(&(stacks->a)), out);
 	}
 	else if (stacks->b->data > stacks->a->next->data
 		&& stacks->b->data < stacks->a->next->next->data)
 	{
-		// printf("\n\tpart 2 size 4\n");
-		// print_list(*stacks);
 		fill_out(reverse_rotate_a(&(stacks->a)), out);
 		fill_out(push_a(stacks), out);
 		fill_out(rotate_a(&(stacks->a)), out);
@@ -70,17 +66,11 @@ void	sort_stack_four(t_stacks *stacks, t_output **out)
 	}
 	else if (stacks->b->data > stacks->a->next->next->data)
 	{
-		// printf("\n\tpart 3 size 4\n");
-		// print_list(*stacks);
 		fill_out(push_a(stacks), out);
 		fill_out(rotate_a(&(stacks->a)), out);
 	}
 	else
-	{
-		// printf("\n\tpart 4 size 4\n");
-		// print_list(*stacks);
 		fill_out(push_a(stacks), out);
-	}
 }
 
 void	sort_stack_five(t_stacks *stacks, t_output **out)
@@ -88,16 +78,12 @@ void	sort_stack_five(t_stacks *stacks, t_output **out)
 	if (stacks->b->data > stacks->a->data
 		&& stacks->b->data < stacks->a->next->data)
 	{
-		// printf("\n\tpart 1 size 5\n");
-		// print_list(*stacks);
 		fill_out(push_a(stacks), out);
 		fill_out(swap_a(&(stacks->a)), out);
 	}
 	else if (stacks->b->data > stacks->a->next->data
 		&& stacks->b->data < stacks->a->next->next->data)
 	{
-		// printf("\n\tpart 2 size 5\n");
-		// print_list(*stacks);
 		fill_out(rotate_a(&(stacks->a)), out);
 		fill_out(rotate_a(&(stacks->a)), out);
 		fill_out(push_a(stacks), out);
@@ -106,30 +92,22 @@ void	sort_stack_five(t_stacks *stacks, t_output **out)
 	}
 	else if (stacks->b->data > stacks->a->next->next->data)
 	{
-		// printf("\n\tpart 3 size 5\n");
-		// print_list(*stacks);
 		fill_out(reverse_rotate_a(&(stacks->a)), out);
 		fill_out(push_a(stacks), out);
 		fill_out(rotate_a(&(stacks->a)), out);
 		fill_out(rotate_a(&(stacks->a)), out);
 	}
 	else
-	{
-		// printf("\n\tpart 4 size 5\n");
-		// print_list(*stacks);
 		fill_out(push_a(stacks), out);
-	}
 }
 
 void	size_ff(t_stacks *stacks, t_output **out, int size)
 {
-	// print_list(*stacks);
 	fill_out(push_b(stacks), out);
 	if (size == 5)
 		fill_out(push_b(stacks), out);
 	size_three(&(stacks->a), out);
 	sort_stack_four(stacks, out);
-	// print_list(*stacks);
 	if (size == 4)
 		return ;
 	if (stacks->b->data > stacks->a->next->next->next->data)
